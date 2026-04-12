@@ -86,7 +86,7 @@ class PythonVM:
                 elif op == 0x22: regs[bc[pc+1]] = regs[bc[pc+2]] * regs[bc[pc+3]]; pc += 4
                 elif op == 0x23:
                     if regs[bc[pc+3]] != 0:
-                        regs[bc[pc+1]] = regs[bc[pc+2]] // regs[bc[pc+3]]
+                        regs[bc[pc+1]] = int(regs[bc[pc+2]] / regs[bc[pc+3]])
                     pc += 4
                 elif op == 0x24: regs[bc[pc+1]] = regs[bc[pc+2]] % regs[bc[pc+3]]; pc += 4
                 elif op == 0x2C: regs[bc[pc+1]] = 1 if regs[bc[pc+2]] == regs[bc[pc+3]] else 0; pc += 4
